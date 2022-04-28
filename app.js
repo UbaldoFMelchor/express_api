@@ -22,7 +22,13 @@ app.get('/v1/explorers/:id', (req, res) => {
     console.log(`Api Explorers GET request ${new Date()}`)
     console.log(`Getting explorer with id ${req.params.id}`)
     const explorer = {id:1, name: "Ubaldo"}
-    res.status(200).json(explorer)
+    res.status(200).json(explorer) //$ {"id": 1,"name": "Ubaldo"}
+})
+
+app.post('/v1/explorers', (req,res) => {
+    console.log(`Api Explorers POST request ${new Date()}`)
+    const requestBody = req.body // Parámetros de un cliente
+    res.status(201).json({message: "Created"})
 })
 
 // Con esto inicializamos esta app
